@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="SGPApplication">
+</Property><Property Name="Solution File" Value="C:\Documents and Settings\Arsenio Castellon\Escritorio\app_sgp\SGPApplication\SGPApplication.sln">
+</Property><Property Name="Date" Value="Miércoles, 20 de Abril de 2011">
+</Property><Property Name="Time" Value="15:51 p.m.">
+</Property></Properties><Event ErrorLevel="4" Project="SGPApplication" Source="http://go.microsoft.com/fwlink/?LinkId=159919" Description="Warning: this project requires Crystal Reports, which is no longer included with Visual Studio. Please click here for more information.">
+</Event><Event ErrorLevel="0" Project="SGPApplication" Source="SGPApplication.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="SGPApplication" Source="SGPApplication.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="SGPApplication.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="SGPApplication.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="SGPApplication" Source="SGPApplication.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

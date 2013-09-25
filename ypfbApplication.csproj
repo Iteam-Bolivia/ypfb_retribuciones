@@ -1,0 +1,1650 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5B36A1F2-7970-4D32-8EEE-635684034E8D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ypfbApplication</RootNamespace>
+    <AssemblyName>Sistema de Procesos de Cálculo</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>SETUP.ICO</ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>2227E51129B2FEA23F13DFAB6823900363037728</ManifestCertificateThumbprint>
+    <ManifestKeyFile>SGPApplication_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>es</TargetCulture>
+    <ProductName>SGP Offline</ProductName>
+    <PublisherName>Iteam S.R.L.</PublisherName>
+    <SuiteName>Iteam S.R.L.</SuiteName>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>default</LangVersion>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Mono.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.0.11.91, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.XML" />
+    <Reference Include="Telerik.Reporting, Version=4.2.10.1110, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
+    <Reference Include="Telerik.ReportViewer.WinForms, Version=4.2.10.1110, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseEval.cs" />
+    <Compile Include="Base\Function.cs" />
+    <Compile Include="Base\Functions.cs" />
+    <Compile Include="Base\Var.cs" />
+    <Compile Include="Base\Variables.cs" />
+    <Compile Include="bd_ypfb_retribucionesDataSet.cs">
+      <DependentUpon>bd_ypfb_retribucionesDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bd_ypfb_retribucionesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bd_ypfb_retribucionesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\BloqueController.cs" />
+    <Compile Include="Controller\CalculoController.cs" />
+    <Compile Include="Controller\Calculo_VariableController.cs" />
+    <Compile Include="Controller\CampoController.cs" />
+    <Compile Include="Controller\CampoMercadoController.cs" />
+    <Compile Include="Controller\CampoProductoController.cs" />
+    <Compile Include="Controller\CampoProductoMercadoController.cs" />
+    <Compile Include="Controller\Campo_SinonimoController.cs" />
+    <Compile Include="Controller\ContratoCampoController.cs" />
+    <Compile Include="Controller\ContratoController.cs" />
+    <Compile Include="Controller\Contrato_SinonimoController.cs" />
+    <Compile Include="Controller\ConversionesController.cs" />
+    <Compile Include="Controller\ParExcel_TipoController.cs" />
+    <Compile Include="Controller\FormulaController.cs" />
+    <Compile Include="Controller\DepartamentoController.cs" />
+    <Compile Include="Controller\LocalidadController.cs" />
+    <Compile Include="Controller\MenuController.cs" />
+    <Compile Include="Controller\MercadoController.cs" />
+    <Compile Include="Controller\MonedaController.cs" />
+    <Compile Include="Controller\ParExcelColumnaController.cs" />
+    <Compile Include="Controller\ParExcelController.cs" />
+    <Compile Include="Controller\ProductoController.cs" />
+    <Compile Include="Controller\ProvinciaController.cs" />
+    <Compile Include="Controller\RegaliaController.cs" />
+    <Compile Include="Controller\RolController.cs" />
+    <Compile Include="Controller\SucursalController.cs" />
+    <Compile Include="Controller\TablaCalculoController.cs" />
+    <Compile Include="Controller\TablaController.cs" />
+    <Compile Include="Controller\TablaFilaController.cs" />
+    <Compile Include="Controller\TablaColumnaController.cs" />
+    <Compile Include="Controller\TablaValoresController.cs" />
+    <Compile Include="Controller\TipoCostoController.cs" />
+    <Compile Include="Controller\Tipo_CalculoController.cs" />
+    <Compile Include="Controller\TitularController.cs" />
+    <Compile Include="Controller\Titular_SinonimoController.cs" />
+    <Compile Include="Controller\UnidadMedidaController.cs" />
+    <Compile Include="Controller\VariableController.cs" />
+    <Compile Include="Controller\TitularContratoController.cs" />
+    <Compile Include="Controller\UsuarioController.cs" />
+    <Compile Include="Model\Bd.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Bloque.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\BloqueObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Boot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Calculo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\CalculoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\CalculoVariable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Calculo_Variable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Calculo_VariableObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Campo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\CampoMercado.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\CampoMercadoValor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\CampoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\CampoProducto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\CampoProductoMercadoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\CampoProductoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Campo_Mercado_Valor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Campo_Mercado_ValorObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Campo_Producto_Mercado.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Campo_Sinonimo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Campo_SinonimoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\CollectionHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Condicion.cs" />
+    <Compile Include="Model\CondicionObject.cs" />
+    <Compile Include="Model\Contrato.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\ContratoCampo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\ContratoCampoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\ContratoCondicion.cs" />
+    <Compile Include="Model\ContratoCondicionObject.cs" />
+    <Compile Include="Model\ContratoMarginal.cs" />
+    <Compile Include="Model\ContratoMarginalObject.cs" />
+    <Compile Include="Model\ContratoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Contrato_Campo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Contrato_Sinonimo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Contrato_SinonimoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Conversiones.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\ConversionesObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\CriteriaSerialization.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Csv.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Departamento.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\DepartamentoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Empresa.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\EmpresaObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Excel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Formula.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\FormulaObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\ICalculoRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\IdSerialization.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Localidad.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\LocalidadObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Log.cs" />
+    <Compile Include="Model\Mail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\MenuObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Menus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Mercado.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\MercadoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Mes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\MesObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Misc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Moneda.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\MonedaCorte.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\MonedaCorteObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\MonedaObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Pagina.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\PaginaObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\ParExcel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\ParExcelColumna.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\ParExcelColumnaObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\ParExcelObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\ParExcel_Tipo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\ParExcel_TipoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Producto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\ProductoMercado.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\ProductoMercadoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\ProductoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Provincia.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\ProvinciaObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Regalia.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\RegaliaObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\ReportsObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Rol.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\RolObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Session.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Simbolo.cs" />
+    <Compile Include="Model\SimboloObject.cs" />
+    <Compile Include="Model\Sistema.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\SistemaLog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\SistemaLogObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\SistemaObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Sucursal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\SucursalObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Tabla.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\TablaCalculo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\TablaCalculoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\TablaColumnaObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\TablaFilaObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\TablaObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\TablaValoresObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Tabla_Columna.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Tabla_Fila.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Tabla_Valores.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\TipoClumna.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\TipoColumnaObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\TipoCosto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\TipoCostoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Tipo_Calculo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Tipo_CalculoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Tipo_Proyeccion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Tipo_ProyeccionObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Titular.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\TitularContrato.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\TitularContratoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\TitularObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Titular_Contrato.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Titular_Sinonimo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Titular_SinonimoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\TitutalContratoObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\UnidadMedida.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\UnidadMedidaobject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Usuario.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\UsuarioObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\UsuarioPass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\UsuarioPassObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Usurolmenu.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\UsurolmenuObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Variable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\VariableObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Processors\FunctionProcessor.cs" />
+    <Compile Include="Processors\IFunctionProcessor.cs" />
+    <Compile Include="Processors\IOperatorProcessor.cs" />
+    <Compile Include="Processors\MathProcessor.cs" />
+    <Compile Include="Processors\OperatorProcessor.cs" />
+    <Compile Include="ReportForms\RepAnalisisRet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\RepAnalisisRet.Designer.cs">
+      <DependentUpon>RepAnalisisRet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\RepConfContratoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\RepConfContratoForm.Designer.cs">
+      <DependentUpon>RepConfContratoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\RepDistribPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\RepDistribPart.Designer.cs">
+      <DependentUpon>RepDistribPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\RepDistribRet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\RepDistribRet.Designer.cs">
+      <DependentUpon>RepDistribRet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\RepDistribRetOpe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\RepDistribRetOpe.Designer.cs">
+      <DependentUpon>RepDistribRetOpe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\RepDistribRetTit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\RepDistribRetTit.Designer.cs">
+      <DependentUpon>RepDistribRetTit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\RepDistriValorRemanen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\RepDistriValorRemanen.Designer.cs">
+      <DependentUpon>RepDistriValorRemanen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\RepParticipacionYPFBTorta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\RepParticipacionYPFBTorta.Designer.cs">
+      <DependentUpon>RepParticipacionYPFBTorta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\RepResumenEjec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\RepResumenEjec.Designer.cs">
+      <DependentUpon>RepResumenEjec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\RepRetribucionTorta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\RepRetribucionTorta.Designer.cs">
+      <DependentUpon>RepRetribucionTorta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\RepTorta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\RepTorta.Designer.cs">
+      <DependentUpon>RepTorta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\RepRecalculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\RepRecalculo.designer.cs">
+      <DependentUpon>RepRecalculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\RepTotalHidrocarburos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\RepTotalHidrocarburos.Designer.cs">
+      <DependentUpon>RepTotalHidrocarburos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Utils\Util.cs" />
+    <Compile Include="View\frmCalculoListaPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCalculoListaPeriodo.Designer.cs">
+      <DependentUpon>frmCalculoListaPeriodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCalculoManualPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCalculoManualPeriodo.designer.cs">
+      <DependentUpon>frmCalculoManualPeriodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCalculoBusquedaProyeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCalculoBusquedaProyeccion.Designer.cs">
+      <DependentUpon>frmCalculoBusquedaProyeccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCalculoBusquedaSimulacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCalculoBusquedaSimulacion.Designer.cs">
+      <DependentUpon>frmCalculoBusquedaSimulacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCalculoProyeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCalculoProyeccion.designer.cs">
+      <DependentUpon>frmCalculoProyeccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCalculoProyeccionVariable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCalculoProyeccionVariable.Designer.cs">
+      <DependentUpon>frmCalculoProyeccionVariable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCalculoSimulacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCalculoSimulacion.designer.cs">
+      <DependentUpon>frmCalculoSimulacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCalculoListaProyeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCalculoListaProyeccion.Designer.cs">
+      <DependentUpon>frmCalculoListaProyeccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCalculoListaSimulacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCalculoListaSimulacion.Designer.cs">
+      <DependentUpon>frmCalculoListaSimulacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCalculoBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCalculoBusqueda.Designer.cs">
+      <DependentUpon>frmCalculoBusqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCampo_Sinonimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCampo_Sinonimo.Designer.cs">
+      <DependentUpon>frmCampo_Sinonimo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCampo_SinonimoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCampo_SinonimoLista.Designer.cs">
+      <DependentUpon>frmCampo_SinonimoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmContrato_Condicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmContrato_Condicion.Designer.cs">
+      <DependentUpon>frmContrato_Condicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmContrato_CondicionLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmContrato_CondicionLista.Designer.cs">
+      <DependentUpon>frmContrato_CondicionLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmContrato_Marginal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmContrato_Marginal.Designer.cs">
+      <DependentUpon>frmContrato_Marginal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmContrato_MarginalLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmContrato_MarginalLista.Designer.cs">
+      <DependentUpon>frmContrato_MarginalLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmContrato_Sinonimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmContrato_Sinonimo.Designer.cs">
+      <DependentUpon>frmContrato_Sinonimo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmContrato_SinonimoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmContrato_SinonimoLista.Designer.cs">
+      <DependentUpon>frmContrato_SinonimoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmConversiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmConversiones.Designer.cs">
+      <DependentUpon>frmConversiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmConversionesLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmConversionesLista.Designer.cs">
+      <DependentUpon>frmConversionesLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmImportacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmImportacion.Designer.cs">
+      <DependentUpon>frmImportacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmMoneda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmMoneda.Designer.cs">
+      <DependentUpon>frmMoneda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmMonedaLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmMonedaLista.Designer.cs">
+      <DependentUpon>frmMonedaLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmRegalia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmRegalia.Designer.cs">
+      <DependentUpon>frmRegalia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmRegaliaLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmRegaliaLista.Designer.cs">
+      <DependentUpon>frmRegaliaLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTabla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTabla.Designer.cs">
+      <DependentUpon>frmTabla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTablaCalculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTablaCalculo.Designer.cs">
+      <DependentUpon>frmTablaCalculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTablaCalculoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTablaCalculoLista.Designer.cs">
+      <DependentUpon>frmTablaCalculoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTablaFila.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTablaFila.Designer.cs">
+      <DependentUpon>frmTablaFila.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTablaBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTablaBusqueda.Designer.cs">
+      <DependentUpon>frmTablaBusqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTablaFilaColumna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTablaFilaColumna.Designer.cs">
+      <DependentUpon>frmTablaFilaColumna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTablaFilaLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTablaFilaLista.Designer.cs">
+      <DependentUpon>frmTablaFilaLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTablaColumna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTablaColumna.Designer.cs">
+      <DependentUpon>frmTablaColumna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTablaColumnaLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTablaColumnaLista.Designer.cs">
+      <DependentUpon>frmTablaColumnaLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTablaLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTablaLista.Designer.cs">
+      <DependentUpon>frmTablaLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTablaValores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTablaValores.Designer.cs">
+      <DependentUpon>frmTablaValores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTablaValoresLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTablaValoresLista.Designer.cs">
+      <DependentUpon>frmTablaValoresLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTablaVisualLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTablaVisualLista.Designer.cs">
+      <DependentUpon>frmTablaVisualLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTitularLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTitularLista.Designer.cs">
+      <DependentUpon>frmTitularLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTitular_Sinonimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTitular_Sinonimo.Designer.cs">
+      <DependentUpon>frmTitular_Sinonimo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTitular_SinonimoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTitular_SinonimoLista.Designer.cs">
+      <DependentUpon>frmTitular_SinonimoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmUnidadMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmUnidadMedida.Designer.cs">
+      <DependentUpon>frmUnidadMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmUnidadMedidaLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmUnidadMedidaLista.Designer.cs">
+      <DependentUpon>frmUnidadMedidaLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmVariableAutomatico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmVariableAutomatico.Designer.cs">
+      <DependentUpon>frmVariableAutomatico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmVariableBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmVariableBusqueda.Designer.cs">
+      <DependentUpon>frmVariableBusqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCalculoVariableListaDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCalculoVariableListaDetalle.Designer.cs">
+      <DependentUpon>frmCalculoVariableListaDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCalculoVariableLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCalculoVariableLista.Designer.cs">
+      <DependentUpon>frmCalculoVariableLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmBloque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmBloque.Designer.cs">
+      <DependentUpon>frmBloque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmBloqueBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmBloqueBusqueda.Designer.cs">
+      <DependentUpon>frmBloqueBusqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmBloqueLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmBloqueLista.Designer.cs">
+      <DependentUpon>frmBloqueLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCalculoManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCalculoManual.designer.cs">
+      <DependentUpon>frmCalculoManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCampo.Designer.cs">
+      <DependentUpon>frmCampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCampoBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCampoBusqueda.Designer.cs">
+      <DependentUpon>frmCampoBusqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCampoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCampoLista.Designer.cs">
+      <DependentUpon>frmCampoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCampoProductoMercado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCampoProductoMercado.Designer.cs">
+      <DependentUpon>frmCampoProductoMercado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCampoProductoMercadoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCampoProductoMercadoLista.Designer.cs">
+      <DependentUpon>frmCampoProductoMercadoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmContrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmContrato.Designer.cs">
+      <DependentUpon>frmContrato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmContratoBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmContratoBusqueda.Designer.cs">
+      <DependentUpon>frmContratoBusqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmContratoCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmContratoCampo.Designer.cs">
+      <DependentUpon>frmContratoCampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmDepartamento.Designer.cs">
+      <DependentUpon>frmDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmDepartamentoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmDepartamentoLista.Designer.cs">
+      <DependentUpon>frmDepartamentoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmFormula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmFormula.Designer.cs">
+      <DependentUpon>frmFormula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmImportacion1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmImportacion1.Designer.cs">
+      <DependentUpon>frmImportacion1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmLocalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLocalidad.Designer.cs">
+      <DependentUpon>frmLocalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmLocalidadLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLocalidadLista.Designer.cs">
+      <DependentUpon>frmLocalidadLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmMercado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmMercado.Designer.cs">
+      <DependentUpon>frmMercado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmMercadoBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmMercadoBusqueda.Designer.cs">
+      <DependentUpon>frmMercadoBusqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmMercadoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmMercadoLista.Designer.cs">
+      <DependentUpon>frmMercadoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmProducto.Designer.cs">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmProductoBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmProductoBusqueda.Designer.cs">
+      <DependentUpon>frmProductoBusqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmProductoMercadoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmProductoMercadoLista.Designer.cs">
+      <DependentUpon>frmProductoMercadoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmProductoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmProductoLista.Designer.cs">
+      <DependentUpon>frmProductoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmProvincia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmProvincia.Designer.cs">
+      <DependentUpon>frmProvincia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmProvinciaLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmProvinciaLista.Designer.cs">
+      <DependentUpon>frmProvinciaLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTitular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTitular.Designer.cs">
+      <DependentUpon>frmTitular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTitularBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTitularBusqueda.Designer.cs">
+      <DependentUpon>frmTitularBusqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTitularContrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTitularContrato.Designer.cs">
+      <DependentUpon>frmTitularContrato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmVariable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmVariable.Designer.cs">
+      <DependentUpon>frmVariable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmVariableLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmVariableLista.Designer.cs">
+      <DependentUpon>frmVariableLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCalculoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCalculoLista.Designer.cs">
+      <DependentUpon>frmCalculoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmContratoCampoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmContratoCampoLista.Designer.cs">
+      <DependentUpon>frmContratoCampoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmContratoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmContratoLista.Designer.cs">
+      <DependentUpon>frmContratoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmEmpresa.Designer.cs">
+      <DependentUpon>frmEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmEmpresaLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmEmpresaLista.Designer.cs">
+      <DependentUpon>frmEmpresaLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmMenuLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmMenuLista.designer.cs">
+      <DependentUpon>frmMenuLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmParExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmParExcel.Designer.cs">
+      <DependentUpon>frmParExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmParExcelColumna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmParExcelColumna.Designer.cs">
+      <DependentUpon>frmParExcelColumna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmParExcelLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmParExcelLista.Designer.cs">
+      <DependentUpon>frmParExcelLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmRol.Designer.cs">
+      <DependentUpon>frmRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmRolLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmRolLista.Designer.cs">
+      <DependentUpon>frmRolLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTitularContratoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTitularContratoLista.Designer.cs">
+      <DependentUpon>frmTitularContratoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmUsuarioLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmUsuarioLista.Designer.cs">
+      <DependentUpon>frmUsuarioLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCredits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCredits.Designer.cs">
+      <DependentUpon>frmCredits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLog.Designer.cs">
+      <DependentUpon>frmLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmMDI.Designer.cs">
+      <DependentUpon>frmMDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ReportForms\RepAnalisisRet.resx">
+      <DependentUpon>RepAnalisisRet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\RepConfContratoForm.resx">
+      <DependentUpon>RepConfContratoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\RepDistribPart.resx">
+      <DependentUpon>RepDistribPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\RepDistribRet.resx">
+      <DependentUpon>RepDistribRet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\RepDistribRetOpe.resx">
+      <DependentUpon>RepDistribRetOpe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\RepDistribRetTit.resx">
+      <DependentUpon>RepDistribRetTit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\RepDistriValorRemanen.resx">
+      <DependentUpon>RepDistriValorRemanen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\RepParticipacionYPFBTorta.resx">
+      <DependentUpon>RepParticipacionYPFBTorta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\RepResumenEjec.resx">
+      <DependentUpon>RepResumenEjec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\RepRetribucionTorta.resx">
+      <DependentUpon>RepRetribucionTorta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\RepTorta.resx">
+      <DependentUpon>RepTorta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\RepRecalculo.resx">
+      <DependentUpon>RepRecalculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\RepTotalHidrocarburos.resx">
+      <DependentUpon>RepTotalHidrocarburos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RepDistribución_Valor_Remanente_Grafico.rdlc" />
+    <EmbeddedResource Include="Reports\ReportACuenta.rdlc" />
+    <EmbeddedResource Include="Reports\ReportAnalisisRet.rdlc" />
+    <EmbeddedResource Include="Reports\ReportConfContrato.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDistribPart.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDistribRet.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDistribRetOpe.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDistribRetTit.rdlc" />
+    <EmbeddedResource Include="Reports\ReportResumenEjec.rdlc" />
+    <EmbeddedResource Include="Reports\ReportTotalHidrocarburos.rdlc" />
+    <EmbeddedResource Include="Reports\RepParticipacionYPFB.rdlc" />
+    <EmbeddedResource Include="Reports\RepRecalculo.rdlc" />
+    <EmbeddedResource Include="Reports\RepRetribucionGrafico.rdlc" />
+    <EmbeddedResource Include="View\frmCalculoListaPeriodo.resx">
+      <DependentUpon>frmCalculoListaPeriodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCalculoManualPeriodo.resx">
+      <DependentUpon>frmCalculoManualPeriodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCalculoBusquedaProyeccion.resx">
+      <DependentUpon>frmCalculoBusquedaProyeccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCalculoBusquedaSimulacion.resx">
+      <DependentUpon>frmCalculoBusquedaSimulacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCalculoProyeccion.resx">
+      <DependentUpon>frmCalculoProyeccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCalculoProyeccionVariable.resx">
+      <DependentUpon>frmCalculoProyeccionVariable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCalculoSimulacion.resx">
+      <DependentUpon>frmCalculoSimulacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCalculoListaProyeccion.resx">
+      <DependentUpon>frmCalculoListaProyeccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCalculoListaSimulacion.resx">
+      <DependentUpon>frmCalculoListaSimulacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCalculoBusqueda.resx">
+      <DependentUpon>frmCalculoBusqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCampo_Sinonimo.resx">
+      <DependentUpon>frmCampo_Sinonimo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCampo_SinonimoLista.resx">
+      <DependentUpon>frmCampo_SinonimoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmContrato_Condicion.resx">
+      <DependentUpon>frmContrato_Condicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmContrato_CondicionLista.resx">
+      <DependentUpon>frmContrato_CondicionLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmContrato_Marginal.resx">
+      <DependentUpon>frmContrato_Marginal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmContrato_MarginalLista.resx">
+      <DependentUpon>frmContrato_MarginalLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmContrato_Sinonimo.resx">
+      <DependentUpon>frmContrato_Sinonimo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmContrato_SinonimoLista.resx">
+      <DependentUpon>frmContrato_SinonimoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmConversiones.resx">
+      <DependentUpon>frmConversiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmConversionesLista.resx">
+      <DependentUpon>frmConversionesLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmImportacion.resx">
+      <DependentUpon>frmImportacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmMoneda.resx">
+      <DependentUpon>frmMoneda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmMonedaLista.resx">
+      <DependentUpon>frmMonedaLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmRegalia.resx">
+      <DependentUpon>frmRegalia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmRegaliaLista.resx">
+      <DependentUpon>frmRegaliaLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTabla.resx">
+      <DependentUpon>frmTabla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTablaCalculo.resx">
+      <DependentUpon>frmTablaCalculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTablaCalculoLista.resx">
+      <DependentUpon>frmTablaCalculoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTablaFila.resx">
+      <DependentUpon>frmTablaFila.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTablaBusqueda.resx">
+      <DependentUpon>frmTablaBusqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTablaFilaColumna.resx">
+      <DependentUpon>frmTablaFilaColumna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTablaFilaLista.resx">
+      <DependentUpon>frmTablaFilaLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTablaColumna.resx">
+      <DependentUpon>frmTablaColumna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTablaColumnaLista.resx">
+      <DependentUpon>frmTablaColumnaLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTablaLista.resx">
+      <DependentUpon>frmTablaLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTablaValores.resx">
+      <DependentUpon>frmTablaValores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTablaValoresLista.resx">
+      <DependentUpon>frmTablaValoresLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTablaVisualLista.resx">
+      <DependentUpon>frmTablaVisualLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTitularLista.resx">
+      <DependentUpon>frmTitularLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTitular_Sinonimo.resx">
+      <DependentUpon>frmTitular_Sinonimo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTitular_SinonimoLista.resx">
+      <DependentUpon>frmTitular_SinonimoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmUnidadMedida.resx">
+      <DependentUpon>frmUnidadMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmUnidadMedidaLista.resx">
+      <DependentUpon>frmUnidadMedidaLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmVariableAutomatico.resx">
+      <DependentUpon>frmVariableAutomatico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmVariableBusqueda.resx">
+      <DependentUpon>frmVariableBusqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCalculoVariableListaDetalle.resx">
+      <DependentUpon>frmCalculoVariableListaDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCalculoVariableLista.resx">
+      <DependentUpon>frmCalculoVariableLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmBloque.resx">
+      <DependentUpon>frmBloque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmBloqueBusqueda.resx">
+      <DependentUpon>frmBloqueBusqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmBloqueLista.resx">
+      <DependentUpon>frmBloqueLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCalculoManual.resx">
+      <DependentUpon>frmCalculoManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCampo.resx">
+      <DependentUpon>frmCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCampoBusqueda.resx">
+      <DependentUpon>frmCampoBusqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCampoLista.resx">
+      <DependentUpon>frmCampoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCampoProductoMercado.resx">
+      <DependentUpon>frmCampoProductoMercado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCampoProductoMercadoLista.resx">
+      <DependentUpon>frmCampoProductoMercadoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmContrato.resx">
+      <DependentUpon>frmContrato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmContratoBusqueda.resx">
+      <DependentUpon>frmContratoBusqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmContratoCampo.resx">
+      <DependentUpon>frmContratoCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmDepartamento.resx">
+      <DependentUpon>frmDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmDepartamentoLista.resx">
+      <DependentUpon>frmDepartamentoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmFormula.resx">
+      <DependentUpon>frmFormula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmImportacion1.resx">
+      <DependentUpon>frmImportacion1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmLocalidad.resx">
+      <DependentUpon>frmLocalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmLocalidadLista.resx">
+      <DependentUpon>frmLocalidadLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmMercado.resx">
+      <DependentUpon>frmMercado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmMercadoBusqueda.resx">
+      <DependentUpon>frmMercadoBusqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmMercadoLista.resx">
+      <DependentUpon>frmMercadoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmProducto.resx">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmProductoBusqueda.resx">
+      <DependentUpon>frmProductoBusqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmProductoMercadoLista.resx">
+      <DependentUpon>frmProductoMercadoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmProductoLista.resx">
+      <DependentUpon>frmProductoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmProvincia.resx">
+      <DependentUpon>frmProvincia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmProvinciaLista.resx">
+      <DependentUpon>frmProvinciaLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTitular.resx">
+      <DependentUpon>frmTitular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTitularBusqueda.resx">
+      <DependentUpon>frmTitularBusqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTitularContrato.resx">
+      <DependentUpon>frmTitularContrato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmVariable.resx">
+      <DependentUpon>frmVariable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmVariableLista.resx">
+      <DependentUpon>frmVariableLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCalculoLista.resx">
+      <DependentUpon>frmCalculoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmContratoCampoLista.resx">
+      <DependentUpon>frmContratoCampoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmContratoLista.resx">
+      <DependentUpon>frmContratoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmEmpresa.resx">
+      <DependentUpon>frmEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmEmpresaLista.resx">
+      <DependentUpon>frmEmpresaLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmMenuLista.resx">
+      <DependentUpon>frmMenuLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmParExcel.resx">
+      <DependentUpon>frmParExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmParExcelColumna.resx">
+      <DependentUpon>frmParExcelColumna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmParExcelLista.resx">
+      <DependentUpon>frmParExcelLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmRol.resx">
+      <DependentUpon>frmRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmRolLista.resx">
+      <DependentUpon>frmRolLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTitularContratoLista.resx">
+      <DependentUpon>frmTitularContratoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmUsuarioLista.resx">
+      <DependentUpon>frmUsuarioLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCredits.resx">
+      <DependentUpon>frmCredits.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmLog.resx">
+      <DependentUpon>frmLog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmMDI.resx">
+      <DependentUpon>frmMDI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="bd_ypfb_retribucionesDataSet.xsc">
+      <DependentUpon>bd_ypfb_retribucionesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bd_ypfb_retribucionesDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bd_ypfb_retribucionesDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="bd_ypfb_retribucionesDataSet.xss">
+      <DependentUpon>bd_ypfb_retribucionesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dll\itextsharp.dll" />
+    <Content Include="Dll\Mono.Security.dll" />
+    <Content Include="Dll\Npgsql.dll" />
+    <Content Include="Dll\policy.2.0.Npgsql.dll" />
+    <None Include="Resources\image001.png" />
+    <None Include="Resources\escudo.png" />
+    <Content Include="SETUP.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{2A75196C-D9EB-4129-B803-931327F72D5C}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSDASC">
+      <Guid>{2206CEB0-19C1-11D1-89E0-00C04FD7A829}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
